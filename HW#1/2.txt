@@ -1,0 +1,7 @@
+var createCounter = function(n) {
+    var counter = -1;
+    return function() {
+        counter++;
+        return n + counter;
+    };
+};

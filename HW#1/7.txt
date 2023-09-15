@@ -1,0 +1,7 @@
+var reduce = function(nums, fn, init) {
+    let arr = 0;
+
+    arr = nums.reduce(fn,init);
+
+    return arr;
+};
