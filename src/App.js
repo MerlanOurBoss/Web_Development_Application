@@ -1,14 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
+import { useEffect, useState } from 'react';
+import ClickCounter from './ClickCounter';
+import HoverCounter from './HoverCounter';
 
 function App() {
-  return (
+    const [count, setCount] = useState(0);
+    const [loaded, setLoaded] = useState(false);
+
+    useEffect(() => {
+        console.log('hello side effect')
+
+    })
+
+    useEffect(
+        () => {
+          fetch('foo').then(() => setLoaded(true))
+    },
+        [count]
+    )
+
+    return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Hello World!
-        </p>
-      </header>
+        <button onClick={() => setCount(count + 1)}>
+            {count}
+            </button>
+            <ClickCounter />
+
+            <HoverCounter />
     </div>
   );
 }
