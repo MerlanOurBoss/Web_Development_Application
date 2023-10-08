@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
 import { useEffect, useState } from 'react';
+import { memo } from 'react';
 import ClickCounter from './ClickCounter';
 import HoverCounter from './HoverCounter';
 
@@ -23,10 +25,10 @@ function App() {
     return (
     <div className="App">
         <button onClick={() => setCount(count + 1)}>
-            {count}
+            This is {count}
             </button>
-            <ClickCounter />
 
+            <ClickCounter />
             <HoverCounter />
     </div>
   );
